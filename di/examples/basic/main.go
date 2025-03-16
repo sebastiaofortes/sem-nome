@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	dinovo "github.com/sebastiaofortes/novo-de/di-novo"
+	"github.com/sebastiaofortes/sem-nome/di"
 )
 
 type Repository struct {
@@ -37,7 +37,7 @@ type Controller struct {
 
 func main() {
 
-	app := dinovo.NewContainer()
+	app := di.NewContainer()
 
 	app.AddDependencies(newController, newService, newRepository)
 

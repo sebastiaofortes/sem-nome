@@ -26,11 +26,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/sebastiaofortes/sem-nome"
+	"github.com/sebastiaofortes/sem-nome/di"
 )
 
 func main() {
-	container := dinovo.NewContainer()
+	container := di.NewContainer()
 
 	// Registrando dependências
 	container.AddDependencies(NewService, NewRepository)

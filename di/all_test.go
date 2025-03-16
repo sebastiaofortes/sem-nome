@@ -1,4 +1,4 @@
-package dinovo
+package di
 
 import (
 	"fmt"

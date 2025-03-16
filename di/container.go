@@ -62,23 +62,19 @@ func (c *Container) getDependenciesForConstructor(constructor DependencyBean) []
 		}
 
 		// Procura na lista de um contrutuores um tipo igual ao do parametro
-		injectableDependencies := c.searchInjectableDependencies(paramType, constructor.constructorReturn, constructor.ContainsVariadicParam)
+		injectableDependencies := c.searchInjectableDependencies(paramType, constructor.ContainsVariadicParam)
 
 		for _, injectableDependency := range injectableDependencies {
-			if injectableDependency.IsFunction {
-				argumants := c.getDependenciesForConstructor(injectableDependency)
-				resp := injectableDependency.fnValue.Call(argumants)
-				args = append(args, resp...)
-				log.Println("Injecting: ", injectableDependency.Name, " in ", constructor.Name)
-			} else {
-				args = append(args, injectableDependency.fnValue)
-			}
+			argumants := c.getDependenciesForConstructor(injectableDependency)
+			resp := injectableDependency.fnValue.Call(argumants)
+			args = append(args, resp...)
+			log.Println("Injecting: ", injectableDependency.Name, " in ", constructor.Name)
 		}
 	}
 	return args
 }
 
-func (c *Container) searchInjectableDependencies(paramType reflect.Type, returnType reflect.Type, isVariadic bool) []DependencyBean {
+func (c *Container) searchInjectableDependencies(paramType reflect.Type, isVariadic bool) []DependencyBean {
 	var dependenciesFound []DependencyBean
 	var depsFound []DependencyBean
 	if isInterface(paramType) {

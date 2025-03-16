@@ -14,7 +14,7 @@ Dinovo é um framework leve e dinâmico para injeção de dependências em Golan
 Adicione o `dinovo` ao seu projeto:
 
 ```sh
- go get github.com/seuusuario/dinovo
+ go get github.com/sebastiaofortes/dinovo
 ```
 
 ## Uso Básico
@@ -26,7 +26,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/seuusuario/dinovo"
+	"github.com/sebastiaofortes/dinovo"
 )
 
 func main() {

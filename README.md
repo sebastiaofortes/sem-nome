@@ -1,6 +1,6 @@
-# Dinovo - Framework de Injeção de Dependência para Golang
+# sem-nome - Framework de Injeção de Dependência para Golang
 
-Dinovo é um framework leve e dinâmico para injeção de dependências em Golang, suportando injeção em construtores com parâmetros variádicos.
+sem-nome é um framework leve e dinâmico para injeção de dependências em Golang, suportando injeção em construtores com parâmetros variádicos.
 
 ## Recursos
 
@@ -11,10 +11,10 @@ Dinovo é um framework leve e dinâmico para injeção de dependências em Golan
 
 ## Instalação
 
-Adicione o `dinovo` ao seu projeto:
+Adicione o `sem-nome` ao seu projeto:
 
 ```sh
- go get github.com/sebastiaofortes/dinovo
+ go get github.com/sebastiaofortes/sem-nome
 ```
 
 ## Uso Básico
@@ -26,7 +26,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/sebastiaofortes/dinovo"
+	"github.com/sebastiaofortes/sem-nome"
 )
 
 func main() {
@@ -70,11 +70,11 @@ func NewHandler(services ...Service) Handler {
 }
 ```
 
-O `dinovo` gerencia automaticamente a redução de slices para suportar parâmetros variádicos.
+O `sem-nome` gerencia automaticamente a redução de slices para suportar parâmetros variádicos.
 
 ### Tratamento de Interfaces
 
-Se um construtor retorna uma interface, `dinovo` automaticamente resolve implementações compatíveis.
+Se um construtor retorna uma interface, `sem-nome` automaticamente resolve implementações compatíveis.
 
 ```go
 func NewRepository() RepositoryInterface {

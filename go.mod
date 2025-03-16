@@ -1,4 +1,4 @@
-module github.com/sebastiaofortes/novo-de
+module github.com/sebastiaofortes/sem-nome
 
 go 1.22.2
 

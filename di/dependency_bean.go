@@ -4,7 +4,6 @@ import "reflect"
 
 type DependencyBean struct {
 	ContainsVariadicParam bool
-	IsFunction            bool
 	Name                  string
 	constructorType       reflect.Type
 	fnValue               reflect.Value
@@ -23,7 +22,6 @@ func generateDependencyBean(fn interface{}) DependencyBean {
 		constructorType:       fnType,
 		fnValue:               fnValue,
 		Name:                  nameFunction,
-		IsFunction:            true,
 		ContainsVariadicParam: isVariadic,
 		constructorReturn:     returnType,
 		ParamTypes:            paramTypes,

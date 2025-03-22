@@ -2,6 +2,12 @@
 
 sem-nome é um framework leve e dinâmico para injeção de dependências em Golang, suportando injeção em construtores com parâmetros variádicos.
 
+## Funcionamento
+
+O contêiner de injeção de dependências funciona por meio de um processo de empilhamento e desempilhamento (injeção). Na fase de empilhamento, as dependências de um objeto são identificadas, assim como as dependências dessas dependências, em um ciclo recursivo que termina ao alcançar objetos que não necessitam de injeção. Na fase de injeção, os objetos mapeados na pilha são criados de forma que aqueles no topo da pilha sejam utilizados como parâmetros para a construção dos objetos nas camadas inferiores.
+
+![flow](flow-1.png)
+
 ## Recursos
 
 - Injeção automática de dependências
